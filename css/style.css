@@ -1,0 +1,152 @@
+:root {
+  --grey: #e4e4e4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey);
+  color: white;
+  margin-bottom: 40px;
+}
+
+.logo img {
+  margin: 0.5rem;
+  height: 150px;
+}
+
+.navbarLinks ul {
+  display: flex;
+}
+
+.navbarLinks li {
+  list-style: none;
+}
+
+.navbarLinks li a {
+  text-decoration: none;
+  color: black;
+  padding: 2rem;
+  display: block;
+}
+
+.navbarLinks li a:hover {
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  margin-top: 60px;
+}
+
+.toggleButton .bar {
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .toggleButton {
+    display: flex;
+  }
+
+  .navbarLinks {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbarLinks ul {
+    flex-direction: column;
+  }
+
+  .navbarLinks li {
+    text-align: center;
+  }
+
+  .navbarLinks.active {
+    display: flex;
+  }
+}
+
+/* about */
+.about {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+.about img {
+  object-fit: cover;
+  height: 500px;
+  width: 500px;
+}
+
+/* contact */
+.contactSubhead {
+  text-align: center;
+}
+
+.contact {
+  max-width: 600px;
+  margin: auto;
+}
+
+form {
+  padding-top: 1em;
+}
+
+input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+button {
+  background: var(--grey);
+  border: none;
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.formError {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+}
+
+label {
+  padding-top: 10rem;
+}
+
+.formSection {
+  margin-bottom: 20px;
+}
