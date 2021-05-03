@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
@@ -30,7 +31,9 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="images/foodzone.logo.png" /></a>
+        <a href="index.html"
+          ><img src="images/foodzone.logo.png" alt="foodzoneLogo"
+        /></a>
       </div>
       <a href="#" class="toggleButton">
         <span class="bar"></span>
@@ -48,6 +51,28 @@
     </nav>
   </header>
   <body>
-    <script src="js/script.js"></script>
+    <main class="container">
+      <p><span class="id"></span></p>
+      <div class="details">
+        <div class="loader"></div>
+      </div>
+    </main>
+    <footer>
+      <div class="footerLogo">
+        <a href="index.html"
+          ><img
+            src="images/foodzone.logo.png"
+            alt="foodzoneLogo"
+            class="foodzoneLogoFooter"
+        /></a>
+      </div>
+      <div class="soMe">
+        <img src="images/facebookIcon.png" />
+        <img src="images/instagramIcon.png" alt="" />
+        <img src="images/twitterIcon.png" alt="" />
+      </div>
+    </footer>
+    <script src="js/blogPostDetails.js"></script>
+    <script src="js/components.js"></script>
   </body>
 </html>

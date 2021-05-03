@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foodzone | Our recipes</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -30,7 +30,9 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="images/foodzone.logo.png" /></a>
+        <a href="index.html"
+          ><img src="images/foodzone.logo.png" alt="foodzoneLogo"
+        /></a>
       </div>
       <a href="#" class="toggleButton">
         <span class="bar"></span>
@@ -48,6 +50,10 @@
     </nav>
   </header>
   <body>
-    <script src="js/script.js"></script>
+    <h1>Our latest recipes</h1>
+    <button id="previousButton">Previous</button>
+    <button id="nextButton">Next</button>
+    <script src="js/components.js"></script>
+    <script src="js/listOfBlogPosts.js"></script>
   </body>
 </html>
