@@ -37,7 +37,7 @@ function createHtml(product) {
                                         <img src="${product.images[0].src}" alt="${product.name}" id="myImg">
                                         <div id="imageModal" class="modal">
                                           <span class="exit">$times;</span>
-                                          <img class="modalContent" id="image1">
+                                          <img class="${product.images[0].src}" id="image1">
                                         </div>
                                     </div>
                                     <div class="productContainer">
@@ -55,9 +55,11 @@ var modal = document.getElementById("imageModal");
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("image1");
 
-img.onclick = function () {
-  modal.style.display = "block";
-  modalImg.src = this.src;
+window.onload = function () {
+  img.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  };
 };
 
 var span = document.getElementsByClassName("exit")[0];
