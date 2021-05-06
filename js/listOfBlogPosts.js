@@ -1,4 +1,42 @@
-const apiurl = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
+const url = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
+const resultsContainer = document.querySelector(".listResults");
+
+async function fetchBlogPosts() {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
+
+    const blogPosts = json.data;
+
+    resultsContainer.innerHTML = "";
+
+    for (let i = 0; i < blogPosts.length; i++) {
+      if (i === 10) {
+        break;
+      }
+
+      const blogImage = blogPosts.id;
+
+      resultsContainer.innerHTML += `
+      <a href="blogPostDetails.html?id=${blogImage}" class="product">
+      <div class="card">
+        <img src="${product.images[0].src}" alt="${product.name}">
+        <p class="productName">${product.name}</p>
+        <p class="productDescription">${product.short_description}</p>
+        <button>Read more</button>
+        </div>
+    </a>`;
+    }
+  } catch (error) {
+    console.log(error);
+    resultsContainer.innerHTML = ("error", error);
+  }
+}
+
+fetchBlogPosts();
+
+/*const apiurl = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
 
 let length = 10;
 let offset = 0;
@@ -40,4 +78,4 @@ nextButton.addEventListener("click", () => {
   fetchApi(apiurl);
 });
 
-fetchApi(apiurl);
+fetchApi(apiurl); */

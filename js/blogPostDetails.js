@@ -41,7 +41,8 @@ function createHtml(product) {
                                         </div>
                                     </div>
                                     <div class="productContainer">
-                                        <h2>${product.name}</h2>
+                                        <h1>${product.name}</h1>
+                                        <p class="date">Updated 25.05.2020, by Charlotte</p>
                                         <p class="productDescription">${product.description}</p>
                                         <img src="images/chefHat.png" alt="chefIcon" class="chefIcon">
                                         <img src="images/people.png" alt="people" class="people">
@@ -55,11 +56,9 @@ var modal = document.getElementById("imageModal");
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("image1");
 
-window.onload = function () {
-  img.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-  };
+img.onclick = function () {
+  modal.style.display = "block";
+  modalImg.src = this.src;
 };
 
 var span = document.getElementsByClassName("exit")[0];
