@@ -398,12 +398,25 @@ a {
 }
 
 /* about */
+.about {
+  position: relative;
+}
+
 .aboutImage img {
+  width: 100%;
   object-fit: cover;
-  height: 350px;
-  width: 80%;
-  margin: 0 auto;
-  display: block;
+  height: 300px;
+  background-repeat: no-repeat;
+  margin-bottom: 1rem;
+}
+
+.heroText {
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .aboutInfo {
@@ -426,15 +439,6 @@ a {
 .aboutPicture {
   border-radius: 50%;
   height: 200px;
-}
-
-.heroText {
-  position: absolute;
-  text-align: center;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
 }
 
 .aboutText {
