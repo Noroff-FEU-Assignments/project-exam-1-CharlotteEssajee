@@ -12,6 +12,8 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   margin-top: 30px;
+  font-size: 2rem;
+  letter-spacing: 5px;
 }
 
 /* navbar */
@@ -22,6 +24,8 @@ h1 {
   background-color: var(--grey);
   color: white;
   margin-bottom: 40px;
+  position: relative;
+  z-index: +1;
 }
 
 .logo img {
@@ -46,7 +50,6 @@ h1 {
 
 .navbarLinks li a:hover {
   border-bottom: 1px solid black;
-  padding-bottom: 0.5rem;
 }
 
 .toggleButton {
@@ -94,6 +97,18 @@ h1 {
   }
 }
 
+@media screen and (max-width: 470px) {
+  .logo img {
+    height: 100px;
+  }
+
+  .toggleButton {
+    margin-top: 35px;
+    width: 25px;
+    height: 20px;
+  }
+}
+
 /* index */
 a {
   text-decoration: none;
@@ -102,7 +117,7 @@ a {
 }
 
 .blogImage {
-  opacity: 85%;
+  opacity: 90%;
   -webkit-transition: all 2s ease;
   -moz-transition: all 2s ease;
   -ms-transition: all 2s ease;
@@ -121,6 +136,7 @@ a {
 .productName {
   font-size: 1rem;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .products {
@@ -148,24 +164,46 @@ a {
   position: absolute;
 }
 
+@media screen and (max-width: 1100px) {
+  .product {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .product {
+    width: 100%;
+    text-align: center;
+  }
+
+  .productName {
+    text-align: center;
+  }
+}
+
 /* blog detail page */
 .cardDetail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.imageContainer {
+  text-align: center;
 }
 
 .productContainer {
-  padding-top: 30px;
-  width: 400px;
+  width: 700px;
+  margin: 0 auto;
 }
 
-.productContainer img {
-  width: 2rem;
+.recipeName {
+  text-align: left;
 }
 
 .date {
   font-size: 10px;
   font-weight: bold;
+  padding-bottom: 30px;
 }
 
 #myImg {
@@ -174,8 +212,8 @@ a {
   transition: 0.3s;
   object-fit: cover;
   height: 400px;
-  width: 600px;
-  margin-right: 30px;
+  width: 700px;
+  align-items: center;
 }
 
 #myImg:hover {
@@ -241,9 +279,121 @@ a {
   cursor: pointer;
 }
 
+.reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.reviewHeading {
+  letter-spacing: 1px;
+  margin: 20px 0;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviewHeading h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: var(--grey);
+  padding: 10px 20px;
+}
+
+.reviewHeading span {
+  font-size: 1rem;
+  margin: 50px 0 10px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.reviewBoxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.reviewBox {
+  width: 500px;
+  box-shadow: 2px 2px 30px rgb(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.profileImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName strong {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.userName span {
+  font-size: 0.8rem;
+}
+
+.profileReview {
+  color: rgb(71, 71, 71);
+}
+
+.boxTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.userComments p {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 750px) {
+  #myImg,
+  .productContainer {
+    width: 400px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .modalContent {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #myImg,
+  .productContainer {
+    width: 300px;
   }
 }
 

@@ -41,13 +41,9 @@ function createHtml(product) {
                                         </div>
                                     </div>
                                     <div class="productContainer">
-                                        <h1>${product.name}</h1>
+                                        <h1 class="recipeName">${product.name}</h1>
                                         <p class="date">Updated 25.05.2020, by Charlotte</p>
                                         <p class="productDescription">${product.description}</p>
-                                        <img src="images/chefHat.png" alt="chefIcon" class="chefIcon">
-                                        <img src="images/people.png" alt="people" class="people">
-                                        <img src="images/ingredient.png" alt="ingredients" class="ingredients">
-                                        <p>Cooking time</p>
                                     </div>
                               </div>`;
 }
