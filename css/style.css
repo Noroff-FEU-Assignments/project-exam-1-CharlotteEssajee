@@ -1,5 +1,6 @@
 :root {
   --grey: #e4e4e4;
+  --dark-grey: #636363;
 }
 
 * {
@@ -159,9 +160,31 @@ a {
   position: relative;
 }
 
-.previous,
-.next {
+#previous,
+#next {
+  background: var(--grey);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 3rem;
   position: absolute;
+  width: 3rem;
+  z-index: 1;
+}
+
+#previous {
+  left: 30px;
+  top: 45%;
+}
+
+#next {
+  right: 30px;
+  top: 45%;
+}
+
+#previous:hover,
+#next:hover {
+  background-color: var(--dark-grey);
 }
 
 @media screen and (max-width: 1100px) {
@@ -512,7 +535,7 @@ button {
 }
 
 button:hover {
-  background: #636363;
+  background: var(--dark-grey);
   color: white;
   transition: ease-out 0.4s;
 }

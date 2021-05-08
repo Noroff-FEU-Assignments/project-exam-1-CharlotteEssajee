@@ -7,11 +7,11 @@ async function fetchBlogPosts() {
     const json = await response.json();
     console.log(json);
 
-    const blogPosts = json.data;
+    const blogPosts = json.id;
 
     resultsContainer.innerHTML = "";
 
-    for (let i = 0; i < blogPosts.length; i++) {
+    for (let i = 0; i < blogPosts; i++) {
       if (i === 10) {
         break;
       }
