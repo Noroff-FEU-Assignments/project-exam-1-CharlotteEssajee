@@ -1,3 +1,4 @@
+// fetch 10 results, load more button
 const url = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
 const resultsContainer = document.querySelector(".listResults");
 
@@ -7,19 +8,15 @@ async function fetchBlogPosts() {
     const json = await response.json();
     console.log(json);
 
-    const blogPosts = json.id;
-
     resultsContainer.innerHTML = "";
 
-    for (let i = 0; i < blogPosts; i++) {
+    for (let i = 0; i < json; i++) {
       if (i === 10) {
         break;
       }
 
-      const blogImage = blogPosts.id;
-
       resultsContainer.innerHTML += `
-      <a href="blogPostDetails.html?id=${blogImage}" class="product">
+      <a href="blogPostDetails.html?id=${json}" class="product">
       <div class="card">
         <img src="${product.images[0].src}" alt="${product.name}">
         <p class="productName">${product.name}</p>
@@ -35,47 +32,3 @@ async function fetchBlogPosts() {
 }
 
 fetchBlogPosts();
-
-/*const apiurl = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
-
-let length = 10;
-let offset = 0;
-
-const previousButton = document.getElementById("#previousButton");
-const nextButton = document.getElementById("#nextButton");
-
-async function fetchApi(url) {
-  try {
-    const data = await fetch(
-      url + `posts?per_page=${length}&offset=${offset}&_embed`
-    );
-    const json = await data.json();
-
-    // Validate Buttons visibility
-    if (offset === 0) {
-      buttonPrevious.style.display = "none";
-    } else {
-      buttonPrevious.style.display = "block";
-    }
-    if (json.length < 10) {
-      buttonNext.style.display = "none";
-    } else {
-      buttonNext.style.display = "block";
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-previousButton.addEventListener("click", () => {
-  if (offset >= 10) {
-    offset -= 10;
-  }
-  fetchApi(apiurl);
-});
-nextButton.addEventListener("click", () => {
-  offset += 10;
-  fetchApi(apiurl);
-});
-
-fetchApi(apiurl); */

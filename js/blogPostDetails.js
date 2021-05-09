@@ -1,7 +1,7 @@
+// create innerHTML with wp api
+
 const queryString = document.location.search;
-
 const params = new URLSearchParams(queryString);
-
 const id = params.get("id");
 
 if (id === null) {
@@ -9,6 +9,8 @@ if (id === null) {
 }
 
 const url = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products/";
+const urlDetail =
+  "https://foodz0ne.flowerpower.one/wp-json/wc/store/products/" + id;
 const corsFix = url + id;
 
 const idContainer = document.querySelector(".id");
@@ -35,10 +37,6 @@ function createHtml(product) {
   detailContainer.innerHTML = `<div class ="cardDetail">
                                     <div class="imageContainer">
                                         <img src="${product.images[0].src}" alt="${product.name}" id="myImg">
-                                        <div id="imageModal" class="modal">
-                                          <span class="exit">$times;</span>
-                                          <img class="${product.images[0].src}" id="image1">
-                                        </div>
                                     </div>
                                     <div class="productContainer">
                                         <h1 class="recipeName">${product.name}</h1>
@@ -48,11 +46,28 @@ function createHtml(product) {
                               </div>`;
 }
 
-var modal = document.getElementById("imageModal");
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("image1");
+// change title dynamically
+const title = document.querySelector("title");
 
-img.onclick = function () {
+async function changeTitle() {
+  try {
+    const responsePost = await fetch(urlDetail);
+    const product = await responsePost.json();
+
+    title.innerHTML += ` | ${product.name}`;
+  } catch (error) {
+    console.log("error :>> ", error);
+  }
+}
+
+changeTitle();
+
+// må fikse modal
+var modal = document.getElementById("myModal");
+var img1 = document.getElementById("myImg");
+var modalImg = document.getElementById("img1");
+
+img1.onclick = function () {
   modal.style.display = "block";
   modalImg.src = this.src;
 };

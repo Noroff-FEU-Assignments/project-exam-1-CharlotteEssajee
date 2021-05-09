@@ -1,4 +1,4 @@
-/* contactForm */
+// contact form
 const form = document.querySelector("#contactForm");
 const fullname = document.querySelector("#fullName");
 const fullNameError = document.querySelector("#fullNameError");

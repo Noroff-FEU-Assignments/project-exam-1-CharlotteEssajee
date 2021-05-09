@@ -1,3 +1,4 @@
+// create cards innerHTML
 const url = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
 const productContainer = document.querySelector(".products");
 
@@ -28,6 +29,7 @@ function createHTML(products) {
   });
 }
 
+// ????? skjer her
 var sLeft = element.scrollLeft;
 element.scrollLeft = 10;
 
