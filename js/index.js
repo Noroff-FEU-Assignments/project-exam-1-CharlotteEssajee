@@ -29,25 +29,18 @@ function createHTML(products) {
   });
 }
 
+// scroll effect to buttons
 const leftButton = document.getElementById("previous");
 const rightButton = document.getElementById("next");
+const carouselProducts = document.getElementById("carouselProducts");
+const productsWidth = carouselProducts.offsetWidth;
 
-rightButton.onclick = function () {
-  document.getElementsById("carousel").scrollright += 25;
-};
+rightButton.addEventListener("click", function (event) {
+  carouselProducts.scrollLeft += productsWidth;
+  event.preventDefault();
+});
 
-// ????? skjer her
-/*var sLeft = element.scrollLeft;
-element.scrollLeft = 10;
-
-const leftButton = document.getElementById("previous");
-const rightButton = document.getElementById("next");
-
-leftButton.onclick = function () {
-  document.getElementById("carousel").scrollLeft += 25;
-};
-
-rightButton.onclick = function () {
-  document.getElementById("carousel").scrollRight;
-};
-*/
+leftButton.addEventListener("click", function (event) {
+  carouselProducts.scrollLeft -= productsWidth;
+  event.preventDefault();
+});

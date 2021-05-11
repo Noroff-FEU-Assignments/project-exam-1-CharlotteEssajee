@@ -38,6 +38,9 @@ function createHtml(product) {
                                     <div class="imageContainer">
                                         <img src="${product.images[0].src}" alt="${product.name}" id="myImg">
                                     </div>
+                                    <div>
+                                      <span class="close">
+                                    </div>
                                     <div class="productContainer">
                                         <h1 class="recipeName">${product.name}</h1>
                                         <p class="date">Updated 25.05.2020, by Charlotte</p>
@@ -63,7 +66,7 @@ async function changeTitle() {
 changeTitle();
 
 // må fikse modal
-var modal = document.getElementById("myModal");
+/*var modal = document.getElementById("myModal");
 var img1 = document.getElementById("myImg");
 var modalImg = document.getElementById("img1");
 
@@ -77,3 +80,4 @@ var span = document.getElementsByClassName("exit")[0];
 span.onclick = function () {
   modal.style.display = "none";
 };
+*/
