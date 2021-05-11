@@ -29,8 +29,15 @@ function createHTML(products) {
   });
 }
 
+const leftButton = document.getElementById("previous");
+const rightButton = document.getElementById("next");
+
+rightButton.onclick = function () {
+  document.getElementsById("carousel").scrollright += 25;
+};
+
 // ????? skjer her
-var sLeft = element.scrollLeft;
+/*var sLeft = element.scrollLeft;
 element.scrollLeft = 10;
 
 const leftButton = document.getElementById("previous");
@@ -43,3 +50,4 @@ leftButton.onclick = function () {
 rightButton.onclick = function () {
   document.getElementById("carousel").scrollRight;
 };
+*/

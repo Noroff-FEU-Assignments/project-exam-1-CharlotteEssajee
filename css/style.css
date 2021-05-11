@@ -421,6 +421,38 @@ a {
   }
 }
 
+/* list of blog posts */
+.blogPostImage {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.listOfBlogPosts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.loadMore {
+  text-align: center;
+}
+
+.loadMoreButton {
+  width: 300px;
+}
+
+@media screen and (max-width: 680px) {
+  .blogPostImage {
+    width: 300px;
+  }
+
+  .listOfBlogPosts {
+    text-align: center;
+  }
+}
+
 /* about */
 .about {
   position: relative;

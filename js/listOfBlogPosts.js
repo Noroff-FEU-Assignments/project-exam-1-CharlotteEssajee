@@ -1,34 +1,34 @@
 // fetch 10 results, load more button
 const url = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
-const resultsContainer = document.querySelector(".listResults");
+const productContainer = document.querySelector(".blogPosts");
 
-async function fetchBlogPosts() {
+async function getRecipes() {
   try {
     const response = await fetch(url);
-    const json = await response.json();
-    console.log(json);
+    const getResults = await response.json();
 
-    resultsContainer.innerHTML = "";
+    console.log(getResults);
 
-    for (let i = 0; i < json; i++) {
-      if (i === 10) {
-        break;
-      }
+    createHTML(getResults);
+  } catch (error) {
+    console.log;
+  }
+}
 
-      resultsContainer.innerHTML += `
-      <a href="blogPostDetails.html?id=${json}" class="product">
+getRecipes();
+
+function createHTML(products) {
+  products.forEach(function (product) {
+    productContainer.innerHTML += `
+      <a href="blogPostDetails.html?id=${product.id}" class="listOfBlogPosts">
       <div class="card">
-        <img src="${product.images[0].src}" alt="${product.name}">
-        <p class="productName">${product.name}</p>
+        <img src="${product.images[0].src}" alt="${product.name}" class="blogPostImage">
+        <h1 class="productName">${product.name}</h1>
         <p class="productDescription">${product.short_description}</p>
         <button>Read more</button>
         </div>
     </a>`;
-    }
-  } catch (error) {
-    console.log(error);
-    resultsContainer.innerHTML = ("error", error);
-  }
+  });
 }
 
-fetchBlogPosts();
+const loadMore = document.querySelector(".loadMoreButton");

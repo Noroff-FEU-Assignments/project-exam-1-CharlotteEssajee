@@ -56,7 +56,7 @@ async function changeTitle() {
 
     title.innerHTML += ` | ${product.name}`;
   } catch (error) {
-    console.log("error :>> ", error);
+    console.log("error", error);
   }
 }
 
