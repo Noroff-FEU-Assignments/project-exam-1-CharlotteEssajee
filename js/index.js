@@ -1,5 +1,6 @@
 // create cards innerHTML
-const url = "https://foodz0ne.flowerpower.one/wp-json/wc/store/products";
+const url =
+  "https://foodz0ne.flowerpower.one/wp-json/wc/store/products?per_page=12";
 const productContainer = document.querySelector(".products");
 
 async function getRecipes() {
