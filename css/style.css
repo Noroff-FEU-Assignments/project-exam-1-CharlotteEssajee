@@ -193,6 +193,16 @@ a {
   .product {
     width: 50%;
   }
+
+  #previous {
+    left: 15px;
+    top: 45%;
+  }
+
+  #next {
+    right: 15px;
+    top: 45%;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -203,6 +213,16 @@ a {
 
   .productName {
     text-align: center;
+  }
+
+  #previous {
+    left: 10px;
+    top: 45%;
+  }
+
+  #next {
+    right: 10px;
+    top: 45%;
   }
 }
 
