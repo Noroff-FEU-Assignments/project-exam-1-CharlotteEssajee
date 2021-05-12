@@ -1,6 +1,6 @@
 // fetch 10 results, load more button
 const url =
-  "https://foodz0ne.flowerpower.one/wp-json/wp/v2/product?per_page=12";
+  "https://foodz0ne.flowerpower.one/wp-json/wc/store/products?per_page=12";
 
 const recipeContainer = document.querySelector(".blogPosts");
 const loadMoreButton = document.querySelector(".loadMoreButton");
@@ -15,14 +15,14 @@ async function getRecipes() {
     recipeContainer.innerHTML = "";
 
     for (let i = 0; i < product.length; i++) {
-      console.log(product[i]);
+      console.log(product[i].name);
 
       recipeContainer.innerHTML += `
-                                                <a href="blogPostDetails.html?id=${product.title}" class="listOfBlogPosts>
+                                                <a href="blogPostDetails.html?id=${product[i].id}" class="listOfBlogPosts>
                                                   <div class="card">
-                                                    <img src="${product[i]}" alt="${product[i].title}" class="blogPostImage">
-                                                    <h1 class="productName">${product[i].title}</h1>
-                                                    <p class="productDescription">${product.excerpt}</p>
+                                                    <img src="${product[i].images[0].src}" alt="${product[i].name}" class="blogPostImage">
+                                                    <h1 class="productName">${product[i].name}</h1>
+                                                    <p class="productDescription">${product[i].short_description}</p>
                                                     <button>Read more</button>
                                                   </div>
                                                 </a>`;
