@@ -18,15 +18,16 @@ async function getRecipes() {
       console.log(product[i].name);
 
       recipeContainer.innerHTML += `
-                                                <a href="blogPostDetails.html?id=${product[i].id}" class="listOfBlogPosts>
-                                                  <div class="card">
+                                                <a href="blogPostDetails.html?id=${product[i].id}">
+                                                  <div class="blogCard">
                                                     <img src="${product[i].images[0].src}" alt="${product[i].name}" class="blogPostImage">
-                                                    <h1 class="productName">${product[i].name}</h1>
+                                                    <h1 class="productNameDetail">${product[i].name}</h1>
                                                     <p class="productDescription">${product[i].short_description}</p>
-                                                    <button>Read more</button>
+                                                    <div class="readMoreButton">
+                                                      <button>Read more</button>
+                                                    </div>
                                                   </div>
                                                 </a>`;
-
       loadMoreButton.style.display = "block";
     }
   } catch (error) {
@@ -36,10 +37,10 @@ async function getRecipes() {
 
 getRecipes();
 
-let defaultPosts = 9;
+let defaultPosts = 6;
 
 loadMoreButton.addEventListener("click", (e) => {
-  const blogRecipe = document.querySelectorAll(".blogPost");
+  const blogRecipe = document.querySelectorAll(".listOfBlogPosts");
 
   for (let i = defaultPosts; i < defaultPosts + 2; i++) {
     if (defaultPosts < blogRecipe.length) {

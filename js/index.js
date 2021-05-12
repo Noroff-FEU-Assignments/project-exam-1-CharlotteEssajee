@@ -24,7 +24,9 @@ function createHTML(products) {
         <img src="${product.images[0].src}" alt="${product.name}" class="blogImage">
         <h1 class="productName">${product.name}</h1>
         <p class="productDescription">${product.short_description}</p>
-        <button>Read more</button>
+        <div class="readMoreButton">
+          <button>Read more</button>
+        </div>
         </div>
     </a>`;
   });
