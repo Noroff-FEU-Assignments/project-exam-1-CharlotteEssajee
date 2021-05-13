@@ -24,7 +24,7 @@ async function getRecipes() {
                                                     <h1 class="productNameDetail">${product[i].name}</h1>
                                                     <p class="productDescription">${product[i].short_description}</p>
                                                     <div class="readMoreButton">
-                                                      <button>Read more</button>
+                                                      <p class="readMore">Read more</p>
                                                     </div>
                                                   </div>
                                                 </a>`;

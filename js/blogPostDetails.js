@@ -44,7 +44,9 @@ function createHtml(product) {
                                     <div class="productContainer">
                                         <h1 class="recipeName">${product.name}</h1>
                                         <p class="date">Updated 25.05.2020, by Charlotte</p>
-                                        <p class="productDescription">${product.description}</p>
+                                        <span class="people"><i class="fas fa-user"></i>4 portions</span>
+                                        <span class="ingredients"><i class="fas fa-lemon"></i>6 ingredients</span>
+                                        <p class="productDescriptionDetail">${product.description}</p>
                                     </div>
                               </div>`;
 }

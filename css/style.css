@@ -157,6 +157,10 @@ a {
   flex: none;
 }
 
+.productDescription {
+  margin-top: 5px;
+}
+
 .wrapper {
   position: relative;
 }
@@ -249,6 +253,24 @@ a {
   font-size: 10px;
   font-weight: bold;
   padding-bottom: 30px;
+}
+
+.people,
+.ingredients {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--grey);
+  padding: 10px 20px;
+  border-radius: 5%;
+}
+
+.people i,
+.ingredients i {
+  padding-right: 10px;
+}
+
+.productDescriptionDetail {
+  margin-top: 30px;
 }
 
 #myImg {
@@ -440,6 +462,12 @@ a {
   .productContainer {
     width: 300px;
   }
+
+  .people,
+  .ingredients {
+    font-size: 0.6rem;
+    font-weight: bold;
+  }
 }
 
 /* list of blog posts */
@@ -453,6 +481,23 @@ a {
 .blogCard,
 .productNameDetail {
   text-align: center;
+}
+
+.productNameDetail {
+  margin-bottom: 0em;
+  font-size: 2rem;
+  margin-top: 15px;
+}
+
+.readMore {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px 0 20px 0;
+  text-transform: uppercase;
+}
+
+.readMore:hover {
+  text-decoration: underline;
 }
 
 .loadMore {
