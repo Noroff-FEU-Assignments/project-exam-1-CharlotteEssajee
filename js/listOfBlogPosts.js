@@ -5,7 +5,7 @@ const url =
 const recipeContainer = document.querySelector(".blogPosts");
 const loadMoreButton = document.querySelector(".loadMoreButton");
 
-async function getRecipes() {
+async function getBlogRecipes() {
   try {
     const response = await fetch(url);
     const product = await response.json();
@@ -18,8 +18,7 @@ async function getRecipes() {
       console.log(product[i].name);
 
       recipeContainer.innerHTML += `
-                                              <div class="listOfBlogPosts">
-                                                <a href="blogPostDetails.html?id=${product[i].id}">
+                                                <a href="blogPostDetails.html?id=${product[i].id}" class="listOfBlogPosts">
                                                   <div class="blogCard">
                                                     <img src="${product[i].images[0].src}" alt="${product[i].name}" class="blogPostImage">
                                                     <h1 class="productNameDetail">${product[i].name}</h1>
@@ -28,8 +27,7 @@ async function getRecipes() {
                                                       <p class="readMore">Read more</p>
                                                     </div>
                                                   </div>
-                                                </a>
-                                              </div>`;
+                                                </a>`;
       loadMoreButton.style.display = "block";
     }
   } catch (error) {
@@ -37,22 +35,25 @@ async function getRecipes() {
   }
 }
 
-getRecipes();
+getBlogRecipes();
 
-let defaultPosts = 6;
+// load more btn
+let defaultPosts = 8;
 
 loadMoreButton.addEventListener("click", (e) => {
   const blogRecipe = document.getElementsByClassName("listOfBlogPosts");
 
-  for (let i = defaultPosts; i < defaultPosts + 2; i++) {
+  for (let i = defaultPosts; i < defaultPosts + 4; i++) {
     if (defaultPosts < blogRecipe.length) {
       blogRecipe[i].style.display = "block";
     }
   }
 
-  defaultPosts += 2;
+  defaultPosts += 4;
 
   if (defaultPosts >= blogRecipe.length) {
     loadMoreButton.style.display = "none";
   }
 });
+
+console.log(defaultPosts);

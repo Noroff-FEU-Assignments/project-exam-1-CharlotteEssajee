@@ -483,6 +483,21 @@ a {
   text-align: center;
 }
 
+.listOfBlogPosts {
+  display: none;
+}
+
+.listOfBlogPosts:nth-child(1),
+.listOfBlogPosts:nth-child(2),
+.listOfBlogPosts:nth-child(3),
+.listOfBlogPosts:nth-child(4),
+.listOfBlogPosts:nth-child(5),
+.listOfBlogPosts:nth-child(6),
+.listOfBlogPosts:nth-child(7),
+.listOfBlogPosts:nth-child(8) {
+  display: block;
+}
+
 .productNameDetail {
   margin-bottom: 0em;
   font-size: 2rem;
