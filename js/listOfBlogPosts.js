@@ -18,6 +18,7 @@ async function getRecipes() {
       console.log(product[i].name);
 
       recipeContainer.innerHTML += `
+                                              <div class="listOfBlogPosts">
                                                 <a href="blogPostDetails.html?id=${product[i].id}">
                                                   <div class="blogCard">
                                                     <img src="${product[i].images[0].src}" alt="${product[i].name}" class="blogPostImage">
@@ -27,7 +28,8 @@ async function getRecipes() {
                                                       <p class="readMore">Read more</p>
                                                     </div>
                                                   </div>
-                                                </a>`;
+                                                </a>
+                                              </div>`;
       loadMoreButton.style.display = "block";
     }
   } catch (error) {
@@ -40,7 +42,7 @@ getRecipes();
 let defaultPosts = 6;
 
 loadMoreButton.addEventListener("click", (e) => {
-  const blogRecipe = document.querySelectorAll(".listOfBlogPosts");
+  const blogRecipe = document.getElementsByClassName("listOfBlogPosts");
 
   for (let i = defaultPosts; i < defaultPosts + 2; i++) {
     if (defaultPosts < blogRecipe.length) {
@@ -48,7 +50,7 @@ loadMoreButton.addEventListener("click", (e) => {
     }
   }
 
-  defaultPosts += 3;
+  defaultPosts += 2;
 
   if (defaultPosts >= blogRecipe.length) {
     loadMoreButton.style.display = "none";
