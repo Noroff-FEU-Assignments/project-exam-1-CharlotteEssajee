@@ -465,6 +465,10 @@ a {
   width: 300px;
 }
 
+.loadMoreButton i {
+  padding-right: 10px;
+}
+
 @media screen and (max-width: 680px) {
   .blogPostImage {
     width: 300px;
@@ -480,7 +484,7 @@ a {
   position: relative;
 }
 
-.aboutImage img {
+.hero img {
   width: 100%;
   object-fit: cover;
   height: 300px;
