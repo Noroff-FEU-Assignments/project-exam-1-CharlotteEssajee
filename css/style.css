@@ -472,15 +472,33 @@ a {
 
 /* list of blog posts */
 .blogPostImage {
-  width: 600px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
+  margin-bottom: 10px;
   object-fit: cover;
-  margin-top: 30px;
+}
+
+.readMore {
+  margin-bottom: 20px;
 }
 
 .blogCard,
 .productNameDetail {
   text-align: center;
+}
+
+.blogPosts {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 30px;
+}
+
+.listOfBlogPosts {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 400px;
 }
 
 .listOfBlogPosts {
@@ -492,9 +510,7 @@ a {
 .listOfBlogPosts:nth-child(3),
 .listOfBlogPosts:nth-child(4),
 .listOfBlogPosts:nth-child(5),
-.listOfBlogPosts:nth-child(6),
-.listOfBlogPosts:nth-child(7),
-.listOfBlogPosts:nth-child(8) {
+.listOfBlogPosts:nth-child(6) {
   display: block;
 }
 
@@ -502,17 +518,6 @@ a {
   margin-bottom: 0em;
   font-size: 2rem;
   margin-top: 15px;
-}
-
-.readMore {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 20px 0 20px 0;
-  text-transform: uppercase;
-}
-
-.readMore:hover {
-  text-decoration: underline;
 }
 
 .loadMore {
@@ -529,6 +534,16 @@ a {
   padding-right: 10px;
 }
 
+@media screen and (max-width: 888px) {
+  .listOfBlogPosts {
+    width: 300px;
+  }
+
+  .blogPostImage {
+    width: 300px;
+  }
+}
+
 @media screen and (max-width: 680px) {
   .blogPostImage {
     width: 300px;
@@ -536,6 +551,12 @@ a {
 
   .listOfBlogPosts {
     text-align: center;
+  }
+
+  .blogPosts {
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    row-gap: 30px;
   }
 }
 
@@ -618,7 +639,8 @@ a {
     text-align: center;
   }
 
-  .heroText {
+  .heroText,
+  .productNameDetail {
     font-size: 2rem;
   }
 }

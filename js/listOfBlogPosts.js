@@ -24,7 +24,7 @@ async function getBlogRecipes() {
                                                     <h1 class="productNameDetail">${product[i].name}</h1>
                                                     <p class="productDescription">${product[i].short_description}</p>
                                                     <div class="readMoreButton">
-                                                      <p class="readMore">Read more</p>
+                                                      <button class="readMore">Read more</button>
                                                     </div>
                                                   </div>
                                                 </a>`;
@@ -38,20 +38,20 @@ async function getBlogRecipes() {
 getBlogRecipes();
 
 // load more btn
-let defaultPosts = 8;
+let numberOfPosts = 6;
 
 loadMoreButton.addEventListener("click", (e) => {
   const blogRecipe = document.getElementsByClassName("listOfBlogPosts");
 
-  for (let i = defaultPosts; i < defaultPosts + 4; i++) {
-    if (defaultPosts < blogRecipe.length) {
+  for (let i = numberOfPosts; i < numberOfPosts + 6; i++) {
+    if (numberOfPosts < blogRecipe.length) {
       blogRecipe[i].style.display = "block";
     }
   }
 
-  defaultPosts += 4;
+  numberOfPosts += 6;
 
-  if (defaultPosts >= blogRecipe.length) {
+  if (numberOfPosts >= blogRecipe.length) {
     loadMoreButton.style.display = "none";
   }
 });
