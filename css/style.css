@@ -149,6 +149,7 @@ a {
 
 .card {
   margin: 20px;
+  max-width: 250px;
 }
 
 .product {
@@ -253,6 +254,10 @@ a {
     text-align: center;
   }
 
+  .card {
+    max-width: none;
+  }
+
   .productName {
     text-align: center;
   }
@@ -277,6 +282,7 @@ a {
 
   .featureText {
     margin: 0 auto;
+    text-align: center;
   }
 
   .featureText p {
@@ -564,7 +570,11 @@ a {
 .listOfBlogPosts:nth-child(3),
 .listOfBlogPosts:nth-child(4),
 .listOfBlogPosts:nth-child(5),
-.listOfBlogPosts:nth-child(6) {
+.listOfBlogPosts:nth-child(6),
+.listOfBlogPosts:nth-child(7),
+.listOfBlogPosts:nth-child(8),
+.listOfBlogPosts:nth-child(9),
+.listOfBlogPosts:nth-child(10) {
   display: block;
 }
 
@@ -572,6 +582,7 @@ a {
   margin-bottom: 0em;
   font-size: 2rem;
   margin-top: 15px;
+  font-weight: lighter;
 }
 
 .loadMore {

@@ -38,18 +38,18 @@ async function getBlogRecipes() {
 getBlogRecipes();
 
 // load more btn
-let numberOfPosts = 6;
+let numberOfPosts = 10;
 
 loadMoreButton.addEventListener("click", (e) => {
   const blogRecipe = document.getElementsByClassName("listOfBlogPosts");
 
-  for (let i = numberOfPosts; i < numberOfPosts + 6; i++) {
+  for (let i = numberOfPosts; i < numberOfPosts + 2; i++) {
     if (numberOfPosts < blogRecipe.length) {
       blogRecipe[i].style.display = "block";
     }
   }
 
-  numberOfPosts += 6;
+  numberOfPosts += 2;
 
   if (numberOfPosts >= blogRecipe.length) {
     loadMoreButton.style.display = "none";
