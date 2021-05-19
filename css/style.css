@@ -81,7 +81,8 @@ h1 {
     display: none;
   }
 
-  .navbar {
+  .navbar,
+  .footer {
     flex-direction: column;
     background-image: linear-gradient(to right, #e1e1e1, var(--grey));
   }
