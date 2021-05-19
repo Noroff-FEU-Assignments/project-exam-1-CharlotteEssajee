@@ -36,10 +36,7 @@ getId();
 function createHtml(product) {
   detailContainer.innerHTML = `<div class ="cardDetail">
                                     <div class="imageContainer">
-                                        <img src="${product.images[0].src}" alt="${product.name}" id="myImg">
-                                    </div>
-                                    <div>
-                                      <span class="close">
+                                        <img class="openModalImage" src="${product.images[0].src}" alt="${product.name}">
                                     </div>
                                     <div class="productContainer">
                                         <h1 class="recipeName">${product.name}</h1>
@@ -67,19 +64,4 @@ async function changeTitle() {
 
 changeTitle();
 
-// må fikse modal
-/*var modal = document.getElementById("myModal");
-var img1 = document.getElementById("myImg");
-var modalImg = document.getElementById("img1");
-
-img1.onclick = function () {
-  modal.style.display = "block";
-  modalImg.src = this.src;
-};
-
-var span = document.getElementsByClassName("exit")[0];
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-*/
+// modal image
