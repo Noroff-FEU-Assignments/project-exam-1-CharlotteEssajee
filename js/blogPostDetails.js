@@ -38,6 +38,13 @@ function createHtml(product) {
                                     <div class="imageContainer">
                                         <img class="openModalImage" src="${product.images[0].src}" alt="${product.name}">
                                     </div>
+                                    <div class="modal">
+                                      <span class="exit">x</span>
+                                      <div class="modalContent">
+                                        <img src="" alt="" class="modalImg">
+                                        <span class="modalText"></span>
+                                      </div>
+                                    </div>
                                     <div class="productContainer">
                                         <h1 class="recipeName">${product.name}</h1>
                                         <p class="date">Updated 25.05.2020, by Charlotte</p>
@@ -65,3 +72,20 @@ async function changeTitle() {
 changeTitle();
 
 // modal image
+const images = document.querySelector(".openModalImage");
+const modal = document.querySelector(".modal");
+const modalImg = document.querySelector(".modalImg");
+const modalText = document.querySelector(".modallText");
+const close = document.querySelector(".exit");
+
+images.forEach((image) => {
+  image.addEventlistener("click", () => {
+    modalImg.src = image.src;
+    modalText.innerHTML = image.alt;
+    modal.classList.add("appear");
+
+    close.addEventlistener("click", () => {
+      modal.classList.remove("appear");
+    });
+  });
+});

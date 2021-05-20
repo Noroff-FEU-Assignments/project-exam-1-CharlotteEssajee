@@ -352,6 +352,64 @@ a {
   opacity: 0.95;
 }
 
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  z-index: 5;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modalContent {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImg {
+  width: 90%;
+  max-width: 700px;
+}
+
+.modalText {
+  margin-top: 1em;
+}
+
+.modal.appear {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal.appear .modalImg,
+.modal.appear .modalText {
+  animation: zoom 0.3s linear;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.exit {
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
+  font-size: 2em;
+  cursor: pointer;
+}
+
 .reviews {
   display: flex;
   justify-content: center;
