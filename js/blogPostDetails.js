@@ -36,14 +36,12 @@ getId();
 function createHtml(product) {
   detailContainer.innerHTML = `<div class ="cardDetail">
                                     <div class="imageContainer">
-                                        <img class="openModalImage" src="${product.images[0].src}" alt="${product.name}">
+                                        <img class="openModalImage" id="myImg" src="${product.images[0].src}" alt="${product.name}">
                                     </div>
-                                    <div class="modal">
-                                      <span class="exit">x</span>
-                                      <div class="modalContent">
-                                        <img src="" alt="" class="modalImg">
-                                        <span class="modalText"></span>
-                                      </div>
+                                    <div id="modalBox" class="modal">
+                                      <span class="exit">&times;</span>
+                                      <img class="modalImage" id="img01">
+                                      <p id="recipeName"></p>
                                     </div>
                                     <div class="productContainer">
                                         <h1 class="recipeName">${product.name}</h1>
@@ -53,6 +51,30 @@ function createHtml(product) {
                                         <p class="productDescriptionDetail">${product.description}</p>
                                     </div>
                               </div>`;
+
+  // modal image
+  var modal = document.getElementById("modalBox");
+
+  var openImage = document.getElementById("myImg");
+  var modalImage = document.getElementById("img01");
+  var recipeName = document.getElementById("recipeName");
+  openImage.onclick = function () {
+    modal.style.display = "block";
+    modalImage.src = this.src;
+    recipeName.innerHTML = this.alt;
+  };
+
+  var span = document.getElementsByClassName("exit")[0];
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 }
 
 // change title dynamically
@@ -70,22 +92,3 @@ async function changeTitle() {
 }
 
 changeTitle();
-
-// modal image
-const images = document.querySelector(".openModalImage");
-const modal = document.querySelector(".modal");
-const modalImg = document.querySelector(".modalImg");
-const modalText = document.querySelector(".modallText");
-const close = document.querySelector(".exit");
-
-images.forEach((image) => {
-  image.addEventlistener("click", () => {
-    modalImg.src = image.src;
-    modalText.innerHTML = image.alt;
-    modal.classList.add("appear");
-
-    close.addEventlistener("click", () => {
-      modal.classList.remove("appear");
-    });
-  });
-});
